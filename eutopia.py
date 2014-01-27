@@ -45,7 +45,7 @@ class Family:
     
     def step(self):
         for farm in self.farms:
-            # changed to self.eutopia to make it work with the sim version that is passed to Family
+            # changed to self.eutopia to make it work with the sim version that is passed to Family21
             activity = self.make_planting_decision(self.eutopia.activities.activities, farm)
             
             money = activity.get_product('money', farm)
