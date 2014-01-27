@@ -45,8 +45,7 @@ class Family:
     
     def step(self):
         for farm in self.farms:
-            # changed to self.eutopia to make it work with the sim version that is passed to Family
-            activity = self.make_planting_decision(self.eutopia.activities.activities, farm)
+            activity = self.make_planting_decision(eutopia.activities.activities, farm)
             
             money = activity.get_product('money', farm)
             self.bank_balance += money
@@ -133,10 +132,10 @@ if __name__=='__main__':
         
     print activities    
     
-    #import pylab
-    #pylab.plot(range(10), [a.get('durumWheatConventional',0) for a in activities])
-    #pylab.plot(range(10), [a.get('durumWheatGreen',0) for a in activities])
-    #pylab.plot(range(10), [a.get('magic',0) for a in activities])
-    #pylab.show()
+    import pylab
+    pylab.plot(range(10), [a.get('durumWheatConventional',0) for a in activities])
+    pylab.plot(range(10), [a.get('durumWheatGreen',0) for a in activities])
+    pylab.plot(range(10), [a.get('magic',0) for a in activities])
+    pylab.show()
 
         
