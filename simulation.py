@@ -12,11 +12,14 @@ class Simulation:
 
 def read_interventions(interventions):
     """
-    Reads a json 
-    
-    
-    
+    Reads a json file with the format:
+    [ {'name':, 'type':, 'data':[], 'simulation':,}
+    ...
+    ]
+    and returns a simulation object, which in turn contains
+    a dict of scenario objects, which each contain Intervention objects
     """
+    
     simulation = Simulation()
     
     for intervention in interventions:
@@ -64,6 +67,7 @@ if __name__ == "__main__":
     for i in range(10):
         step()
         activities.append(eutopia.get_activity_count())
+        print eutopia.get_activity_count() # this is on a year to year basis.
         
     print activities    
         
